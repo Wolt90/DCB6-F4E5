@@ -1,7 +1,6 @@
 {% macro init_s3_sources() -%}
 
-    {% set sql %}
-
+    {% set sql1 %}
         CREATE TABLE src_customer
         (
                 C_CUSTKEY       UInt32,
@@ -15,7 +14,9 @@
         )
         ENGINE = S3('https://storage.yandexcloud.net/otus-dwh/dbgen/customer.tbl', 'CSV')
         ;
+    {% endset %}
 
+    {% set sql2 %}
         CREATE TABLE src_lineorder
         (
             LO_ORDERKEY             UInt32,
@@ -38,7 +39,9 @@
         )
         ENGINE = S3('https://storage.yandexcloud.net/otus-dwh/dbgen/lineorder.tbl', 'CSV')
         ;
+    {% endset %}
 
+    {% set sql3 %}
         CREATE TABLE src_part
         (
                 P_PARTKEY       UInt32,
@@ -53,7 +56,9 @@
         )
         ENGINE = S3('https://storage.yandexcloud.net/otus-dwh/dbgen/part.tbl', 'CSV')
         ;
+    {% endset %}
 
+    {% set sql4 %}
         CREATE TABLE src_supplier
         (
                 S_SUPPKEY       UInt32,
@@ -69,7 +74,10 @@
 
     {% endset %}
     
-    {% set table = run_query(sql) %}
-
-
+    {% set sql_all = [sql1, sql2, sql3, sql4] %}
+    
+    {% for i in sql_all %}
+        {% set table = run_query(i) %}
+    {% endfor %}
+    
 {%- endmacro %}
