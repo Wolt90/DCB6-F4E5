@@ -1,3 +1,11 @@
+Скриншоты результатов запросов
+
+![image](https://user-images.githubusercontent.com/125214665/218339254-5962d38d-1e58-441a-9cb6-4fed976bb7f3.png)
+![image](https://user-images.githubusercontent.com/125214665/218339236-f53f18a5-9d7d-46cc-ba6a-3aeccce112ae.png)
+![image](https://user-images.githubusercontent.com/125214665/218339261-35e572e3-0cdb-4d8f-a6d9-a45c9f52f20c.png)
+
+
+
 # Development
 
 1. Clone this repo & open with IDE (e.g. [VS Code](https://code.visualstudio.com/))
